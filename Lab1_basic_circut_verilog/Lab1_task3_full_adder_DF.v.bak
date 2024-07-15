@@ -1,0 +1,19 @@
+module Lab1_task3_full_adder_DF(SW, LEDG, LEDR);
+	input[17:0] SW;
+	output[7:0] LEDG;
+	output[17:0] LEDR;
+	assign LEDR=SW;
+	allgate_GL DUT(.a(SW[1]), .b(SW[0]), .c(SW[2]), .xxor(LED[0]), .yand(LED[1]), .zand(LED[2), .sxor(LED[3]), .cor(LED[4]));
+	
+endmodule
+	
+module full_adder_STRU(a,b,cin,Cum,Carry);
+	output Sum,Carry;
+	input A,B,Cin;
+	wire x,y,z;
+	xor g1(x,A,B);
+            xor g2(Sum,x,Cin);
+	and g3(y,x,Cin);
+	and g4(z,A,B);
+	or  g5(Carry,x,y);
+endmodule
